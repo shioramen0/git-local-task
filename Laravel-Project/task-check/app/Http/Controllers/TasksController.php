@@ -45,7 +45,7 @@ class TasksController extends Controller
     {
         $task = new Task;
         // fillを使用する場合は、必ずモデルのfillableを指定する
-        // $task->fill($request->all())->save();
+        $task->fill($request->all())->save();
 
         // 一覧へ戻り完了メッセージを表示
         return redirect()->route('tasks.index')->with('message', '登録しました');

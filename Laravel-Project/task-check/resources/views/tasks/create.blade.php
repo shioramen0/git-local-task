@@ -23,6 +23,12 @@
         <form action="{{ route('tasks.store') }}" method="post">
         @csrf
         <div class="card-body">
+            {{-- 項目数入力 --}}
+            <div class="form-group">
+               <label for="tasknumber">項目数</label>
+               <input type="text" class="form-control" id="tasknumber" name="tasknumber" value="{{ old('tasknumber') }}"
+               placeholder="項目数" />
+            </div>
              {{-- 目標入力 --}}
             <div class="form-group">
                <label for="taskname">目標名</label>

@@ -22,7 +22,7 @@
   <div class="card">
     <form action="{{ route('tasks.update', $task->id) }}" method="post">
       @csrf
-      @method('PUT')
+      @method('patch')
       <div class="card-body">
         {{-- 目標名入力 --}}
         <div class="form-group">
