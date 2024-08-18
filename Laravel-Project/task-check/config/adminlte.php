@@ -297,7 +297,7 @@ return [
         // Navbar items:
         [
             'text' => 'タスク管理',
-            'route' => 'task.index',
+            'route' => 'tasks.index',
             'icon' => 'fas fa-shopping-cart',
             'active' => ['product/*'],
         ],

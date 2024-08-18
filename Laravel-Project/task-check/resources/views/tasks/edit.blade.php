@@ -20,7 +20,7 @@
 
   {{-- 編集画面 --}}
   <div class="card">
-    <form action="{{ route('task.update', $task->id) }}" method="post">
+    <form action="{{ route('tasks.update', $task->id) }}" method="post">
       @csrf
       @method('PUT')
       <div class="card-body">
@@ -39,7 +39,7 @@
       </div>
       <div class="card-footer">
         <div class="row">
-          <a class="btn btn-default" href="{{ route('task.index') }}" role="button">戻る</a>
+          <a class="btn btn-default" href="{{ route('tasks.index') }}" role="button">戻る</a>
           <div class="ml-auto">
             <button type="submit" class="btn btn-primary">編集</button>
           </div>

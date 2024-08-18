@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
-use App\Http\Requests\TasksRequest;
+use App\Http\Requests\TaskRequest;
 
 class TasksController extends Controller
 {
@@ -32,7 +32,7 @@ class TasksController extends Controller
     public function create()
     {
         //
-        return view('task.create');
+        return view('tasks.create');
     }
 
     /**
@@ -41,14 +41,14 @@ class TasksController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TaskRequest $request)
     {
         $task = new Task;
         // fillを使用する場合は、必ずモデルのfillableを指定する
-        $task->fill($request->all())->save();
+        // $task->fill($request->all())->save();
 
         // 一覧へ戻り完了メッセージを表示
-        return redirect()->route('task.index')->with('message', '登録しました');
+        return redirect()->route('tasks.index')->with('message', '登録しました');
     }
 
     /**
@@ -69,7 +69,7 @@ class TasksController extends Controller
     {
         $task = Task::find($id);
 
-        return view('task.edit' , [
+        return view('tasks.edit' , [
             'task' => $task
         ]);
     }
@@ -87,7 +87,7 @@ class TasksController extends Controller
         $task->fill($request->all())->save();
 
         // 一覧へ戻り完了メッセージを表示
-        return redirect()->route('task.index')->with('message' , '編集しました');
+        return redirect()->route('tasks.index')->with('message' , '編集しました');
     }
 
     /**
@@ -101,6 +101,6 @@ class TasksController extends Controller
         Task::where('id' , $id)->delete();
 
         //完了メッセージを表示
-        return redirect()->route('product.index')->with('message' , '削除しました');
+        return redirect()->route('tasks.index')->with('message' , '削除しました');
     }
 }

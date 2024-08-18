@@ -18,7 +18,7 @@
     @endif
 
     {{-- 新規登録画面へ --}}
-    <a class="btn btn-primary mb-2" href="{{ route('task.create') }}" role="button">新規登録</a>
+    <a class="btn btn-primary mb-2" href="{{ route('tasks.create') }}" role="button">新規登録</a>
 
     <div class="card">
         <div class="card-body">
@@ -57,4 +57,4 @@
             </table>
         </div>
     </div>
-@stop
+@stop 
